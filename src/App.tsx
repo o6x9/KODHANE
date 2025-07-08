@@ -1,38 +1,58 @@
-import React from 'react';
-import { Parallax } from '@react-spring/parallax';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Technologies from './components/Technologies';
-import Team from './components/Team';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import React, { lazy, Suspense } from 'react';
+
+// Lazy load components for better performance
+const Hero = lazy(() => import('./components/Hero'));
+const About = lazy(() => import('./components/About'));
+const Services = lazy(() => import('./components/Services'));
+const Technologies = lazy(() => import('./components/Technologies'));
+const Team = lazy(() => import('./components/Team'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+
+// Loading component for better UX
+const SectionLoader: React.FC = () => (
+  <div className="w-full h-screen flex items-center justify-center bg-gray-50">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+  </div>
+);
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Parallax pages={7} className="overflow-hidden">
-        {/* Hero Section - Page 0 */}
+      {/* Hero Section */}
+      <Suspense fallback={<SectionLoader />}>
         <Hero />
-        
-        {/* About Section - Page 1 */}
+      </Suspense>
+
+      {/* About Section */}
+      <Suspense fallback={<SectionLoader />}>
         <About />
-        
-        {/* Services Section - Page 2 */}
+      </Suspense>
+
+      {/* Services Section */}
+      <Suspense fallback={<SectionLoader />}>
         <Services />
-        
-        {/* Technologies Section - Page 3 */}
+      </Suspense>
+
+      {/* Technologies Section */}
+      <Suspense fallback={<SectionLoader />}>
         <Technologies />
-        
-        {/* Team Section - Page 4 */}
+      </Suspense>
+
+      {/* Team Section */}
+      <Suspense fallback={<SectionLoader />}>
         <Team />
-        
-        {/* Contact Section - Page 5 */}
+      </Suspense>
+
+      {/* Contact Section */}
+      <Suspense fallback={<SectionLoader />}>
         <Contact />
-        
-        {/* Footer - Page 6 */}
+      </Suspense>
+
+      {/* Footer */}
+      <Suspense fallback={<SectionLoader />}>
         <Footer />
-      </Parallax>
+      </Suspense>
     </div>
   );
 };

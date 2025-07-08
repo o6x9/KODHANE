@@ -1,27 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { ParallaxLayer } from '@react-spring/parallax';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: string }> = ({ 
-  end, 
-  duration = 2000, 
-  suffix = "" 
-}) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+interface AnimatedCounterProps {
+  end: number;
+  duration?: number;
+  suffix?: string;
+}
+
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ end, duration = 2000, suffix = "" }) => {
+  const [count, setCount] = useState<number>(0);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (!isInView) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
     
-    let startTime: number;
+    let startTime: number | undefined;
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
       
-      // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(easeOutQuart * end));
       
@@ -30,15 +44,14 @@ const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: strin
       }
     };
     requestAnimationFrame(animate);
-  }, [isInView, end, duration]);
+  }, [isVisible, end, duration]);
 
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
 const About: React.FC = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+  const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({});
+  
   const timelineItems = [
     { year: "2020", title: "Founded", description: "Started with a vision to transform digital experiences" },
     { year: "2021", title: "Growth", description: "Expanded our team and capabilities across multiple domains" },
@@ -55,136 +68,163 @@ const About: React.FC = () => {
     { end: 5, suffix: "", label: "Years Experience" },
   ];
 
+  const values = [
+    { icon: "🚀", title: "Innovation", description: "Pushing technological boundaries" },
+    { icon: "🎯", title: "Excellence", description: "Quality in every detail" },
+    { icon: "🤝", title: "Partnership", description: "Collaborative success stories" },
+  ];
+
+  // Intersection Observer for animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections(prev => ({
+              ...prev,
+              [entry.target.id]: true
+            }));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    const sections = document.querySelectorAll('[data-animate]');
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const getAnimationClass = (id: string, baseClass: string = '') => {
+    const isVisible = visibleSections[id];
+    return `${baseClass} transition-all duration-700 ${
+      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+    }`;
+  };
+
   return (
-    <>
-      {/* Background Elements */}
-      <ParallaxLayer offset={1} speed={0.2} className="flex items-center justify-center">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/3 right-10 w-72 h-1 bg-grey opacity-20 rotate-45 animate-float"></div>
-          <div className="absolute bottom-1/3 left-10 w-48 h-1 bg-black opacity-10 -rotate-45 animate-float-slow"></div>
-          <div className="absolute top-1/4 left-1/3 w-16 h-16 border border-grey opacity-15 rotate-12 animate-float"></div>
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header Section */}
+        <div 
+          id="header"
+          data-animate
+          className={getAnimationClass('header', 'text-center mb-16')}
+        >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            About <span className="text-gray-600">Our Story</span>
+          </h1>
+          <div className="w-24 h-1 bg-gray-900 mx-auto"></div>
         </div>
-      </ParallaxLayer>
 
-      {/* Main Content */}
-      <ParallaxLayer offset={1} speed={0.5} className="flex items-center justify-center">
-        <div className="max-w-6xl mx-auto px-4 py-20" ref={ref}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
-                About <span className="text-grey">Our Story</span>
-              </h2>
-              <p className="text-lg text-grey mb-8 leading-relaxed">
-                We are a passionate team of innovators, designers, and developers who believe in the power of technology to create meaningful change. Our journey began with a simple mission: to bridge the gap between imagination and reality through cutting-edge digital solutions.
-              </p>
-              
-              {/* Enhanced Mission Statement */}
-              <div className="bg-white p-6 border-l-4 border-grey mb-8 shadow-sm">
-                <h3 className="text-xl font-semibold text-black mb-3">Our Mission</h3>
-                <p className="text-grey leading-relaxed">
-                  To empower businesses with innovative technology solutions that drive growth, enhance user experiences, and create lasting digital transformation in an ever-evolving technological landscape.
-                </p>
-              </div>
-              
-              {/* Enhanced Stats Grid */}
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                    className="text-center group cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="bg-white p-6 border border-grey border-opacity-20 hover:border-opacity-50 hover:shadow-md transition-all duration-300 rounded-lg">
-                      <div className="text-3xl md:text-4xl font-bold text-black mb-2 transition-colors duration-300 group-hover:text-grey">
-                        <AnimatedCounter end={stat.end} suffix={stat.suffix} duration={2000 + index * 200} />
-                      </div>
-                      <div className="text-grey text-sm md:text-base font-medium">{stat.label}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Enhanced Timeline */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative"
-            >
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-black via-grey to-black opacity-30"></div>
-              {timelineItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="relative pl-12 pb-8 last:pb-0 group"
-                >
-                  <div className="absolute left-2 top-0 w-4 h-4 bg-black rounded-full border-4 border-white transition-all duration-300 group-hover:bg-grey group-hover:scale-125 shadow-md"></div>
-                  <div className="bg-white p-6 border-l-4 border-grey transition-all duration-300 hover:border-black hover:shadow-lg rounded-r-lg">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="text-sm font-bold text-white bg-black px-3 py-1 rounded-full group-hover:bg-grey transition-colors duration-300">
-                        {item.year}
-                      </div>
-                      {item.year === "2025" && (
-                        <div className="text-xs bg-grey bg-opacity-20 text-grey px-2 py-1 rounded-full">
-                          Current
-                        </div>
-                      )}
-                    </div>
-                    <div className="text-lg font-semibold text-black mb-3 group-hover:text-grey transition-colors duration-300">
-                      {item.title}
-                    </div>
-                    <div className="text-grey text-sm leading-relaxed">
-                      {item.description}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Additional Values Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-20 text-center"
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-20">
+          
+          {/* Text Content */}
+          <div 
+            id="content"
+            data-animate
+            className={getAnimationClass('content')}
           >
-            <h3 className="text-2xl font-semibold text-black mb-8">Our Core Values</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { icon: "🚀", title: "Innovation", description: "Pushing technological boundaries" },
-                { icon: "🎯", title: "Excellence", description: "Quality in every detail" },
-                { icon: "🤝", title: "Partnership", description: "Collaborative success stories" },
-              ].map((value, index) => (
-                <motion.div
+            <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
+              We are a passionate team of innovators, designers, and developers who believe in the power of technology to create meaningful change. Our journey began with a simple mission: to bridge the gap between imagination and reality through cutting-edge digital solutions.
+            </p>
+            
+            {/* Mission Statement */}
+            <div className="bg-white p-6 sm:p-8 border-l-4 border-gray-900 mb-8 shadow-lg rounded-r-lg">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">Our Mission</h3>
+              <p className="text-gray-700 leading-relaxed">
+                To empower businesses with innovative technology solutions that drive growth, enhance user experiences, and create lasting digital transformation in an ever-evolving technological landscape.
+              </p>
+            </div>
+            
+            {/* Stats Grid */}
+            <div 
+              id="stats"
+              data-animate
+              className={getAnimationClass('stats', 'grid grid-cols-2 gap-4 sm:gap-6')}
+            >
+              {stats.map((stat, index) => (
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="text-center p-6 border border-grey border-opacity-20 hover:border-opacity-50 hover:shadow-md transition-all duration-300 rounded-lg"
+                  className="text-center p-4 sm:p-6 bg-white border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all duration-300 rounded-lg group"
                 >
-                  <div className="text-4xl mb-4">{value.icon}</div>
-                  <h4 className="text-xl font-semibold text-black mb-2">{value.title}</h4>
-                  <p className="text-grey">{value.description}</p>
-                </motion.div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 group-hover:text-gray-600 transition-colors">
+                    <AnimatedCounter end={stat.end} suffix={stat.suffix} duration={2000 + index * 200} />
+                  </div>
+                  <div className="text-gray-600 text-sm sm:text-base font-medium">{stat.label}</div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
+
+          {/* Timeline */}
+          <div 
+            id="timeline"
+            data-animate
+            className={getAnimationClass('timeline', 'relative')}
+          >
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-900 via-gray-600 to-gray-900 opacity-30"></div>
+            {timelineItems.map((item, index) => (
+              <div
+                key={index}
+                className={`relative pl-12 pb-8 last:pb-0 group transition-all duration-500 delay-${index * 100}`}
+              >
+                <div className="absolute left-2 top-0 w-4 h-4 bg-gray-900 rounded-full border-4 border-white transition-all duration-300 group-hover:bg-gray-600 group-hover:scale-125 shadow-md"></div>
+                <div className="bg-white p-4 sm:p-6 border-l-4 border-gray-600 transition-all duration-300 hover:border-gray-900 hover:shadow-lg rounded-r-lg">
+                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                    <div className="text-sm font-bold text-white bg-gray-900 px-3 py-1 rounded-full group-hover:bg-gray-600 transition-colors duration-300">
+                      {item.year}
+                    </div>
+                    {item.year === "2025" && (
+                      <div className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded-full">
+                        Current
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 group-hover:text-gray-600 transition-colors duration-300">
+                    {item.title}
+                  </div>
+                  <div className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                    {item.description}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </ParallaxLayer>
-    </>
+
+        {/* Values Section */}
+        <div 
+          id="values"
+          data-animate
+          className={getAnimationClass('values', 'text-center')}
+        >
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-12">Our Core Values</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="text-center p-6 sm:p-8 bg-white border border-gray-200 hover:border-gray-400 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 rounded-lg group"
+              >
+                <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
+                <h4 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-gray-600 transition-colors">{value.title}</h4>
+                <p className="text-gray-700 text-sm sm:text-base">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Background Elements - Simplified */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+          <div className="absolute top-1/4 right-10 w-32 sm:w-48 lg:w-72 h-0.5 bg-gray-400 opacity-20 rotate-45 animate-pulse"></div>
+          <div className="absolute bottom-1/3 left-10 w-24 sm:w-32 lg:w-48 h-0.5 bg-gray-900 opacity-10 -rotate-45 animate-pulse delay-1000"></div>
+          <div className="absolute top-1/3 left-1/4 w-8 sm:w-12 lg:w-16 h-8 sm:h-12 lg:h-16 border border-gray-400 opacity-15 rotate-12 animate-pulse delay-2000"></div>
+        </div>
+      </div>
+    </div>
   );
 };
 
