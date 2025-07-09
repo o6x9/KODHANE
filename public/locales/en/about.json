@@ -1,0 +1,63 @@
+{
+  "aboutTitle": "About Our Story",
+  "aboutDescription": "We are a passionate team of innovators, designers, and developers who believe in the power of technology to create meaningful change. Our journey began with a simple mission: to bridge the gap between imagination and reality through cutting-edge digital solutions.",
+  "missionTitle": "Our Mission",
+  "missionDescription": "To empower businesses with innovative technology solutions that drive growth, enhance user experiences, and create lasting digital transformation in an ever-evolving technological landscape.",
+  "stats": {
+    "projectsDelivered": "Projects Delivered",
+    "clientSatisfaction": "Client Satisfaction",
+    "teamMembers": "Team Members",
+    "yearsExperience": "Years Experience"
+  },
+  "valuesTitle": "Our Core Values",
+  "values": [
+    {
+      "icon": "🚀",
+      "title": "Innovation",
+      "description": "Pushing technological boundaries"
+    },
+    {
+      "icon": "🎯",
+      "title": "Excellence",
+      "description": "Quality in every detail"
+    },
+    {
+      "icon": "🤝",
+      "title": "Partnership",
+      "description": "Collaborative success stories"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2020",
+      "title": "Founded",
+      "description": "Started with a vision to transform digital experiences"
+    },
+    {
+      "year": "2021",
+      "title": "Growth",
+      "description": "Expanded our team and capabilities across multiple domains"
+    },
+    {
+      "year": "2022",
+      "title": "Innovation",
+      "description": "Launched cutting-edge solutions for enterprise clients"
+    },
+    {
+      "year": "2023",
+      "title": "Excellence",
+      "description": "Recognized as industry leaders in digital transformation"
+    },
+    {
+      "year": "2024",
+      "title": "Expansion",
+      "description": "Global reach with offices in 5 countries"
+    },
+    {
+      "year": "2025",
+      "title": "Future",
+      "description": "Leading AI-driven solutions and sustainable technology"
+    }
+  ],
+  "timelineCurrent": "Current"
+}

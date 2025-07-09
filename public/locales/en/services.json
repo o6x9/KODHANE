@@ -1,0 +1,31 @@
+{
+  "servicesTitle": "Our Services",
+  "servicesIntro": "We offer comprehensive digital solutions tailored to meet your business needs and drive growth.",
+  "services": [
+    {
+      "icon": "💻",
+      "title": "Web Development",
+      "description": "Custom web applications built with cutting-edge technologies and best practices."
+    },
+    {
+      "icon": "📱",
+      "title": "Mobile Apps",
+      "description": "Native and cross-platform mobile applications for iOS and Android devices."
+    },
+    {
+      "icon": "🎨",
+      "title": "UI/UX Design",
+      "description": "Intuitive and beautiful user interfaces that enhance user experience and engagement."
+    },
+    {
+      "icon": "☁️",
+      "title": "Cloud Solutions",
+      "description": "Scalable cloud infrastructure and deployment strategies for modern applications."
+    },
+    {
+      "icon": "📊",
+      "title": "Consulting",
+      "description": "Strategic technology consulting to help businesses leverage digital transformation."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "sectionHeader": {
+    "title": "Ekibimizle Tanışın",
+    "subtitle": "Olağanüstü sonuçlar elde etmeye ve yeniliği ileri taşımaya kendini adamış tutkulu profesyonellerden oluşan çeşitli bir grup."
+  },
+  "teamMembers": [
+    {
+      "name": "Alex Johnson",
+      "role": "CEO ve Kurucu",
+      "bio": "15+ yıllık teknoloji inovasyonu ve iş stratejisi deneyimine sahip vizyoner lider."
+    },
+    {
+      "name": "Sarah Chen",
+      "role": "CTO",
+      "bio": "Ölçeklenebilir sistemler ve yeni teknolojiler konusunda uzman teknik mimar."
+    },
+    {
+      "name": "Michael Rodriguez",
+      "role": "Baş Tasarımcı",
+      "bio": "Kullanıcı odaklı tasarım ve marka hikayesi anlatımına odaklanan yaratıcı yönetmen."
+    },
+    {
+      "name": "Emily Taylor",
+      "role": "Geliştirme Başkanı",
+      "bio": "Temiz koda tutku duyan geliştirme ekibimizi yöneten tam yığın uzman."
+    }
+  ],
+  "aria": {
+    "linkedin": "{{name}}'in LinkedIn'i",
+    "email": "{{name}}'e E-posta"
+  },
+  "stats": [
+    { "label": "Takım Üyeleri" },
+    { "label": "Deneyim Yılı" },
+    { "label": "7/24 Destek" }
+  ],
+  "quote": {
+    "text": "Birlikte yalnızca yazılım geliştirmiyoruz – işletmeleri dönüştüren ve endüstri genelinde yeniliğe ilham veren dijital deneyimler oluşturuyoruz.",
+    "author": "— Innovation Co. Ekibi"
+  }
+}

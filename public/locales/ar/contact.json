@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title": "تواصل معنا",
+    "subtitle": "هل أنت مستعد لبدء مشروعك التالي؟ دعنا نناقش كيف يمكننا المساعدة في تحويل رؤيتك إلى واقع."
+  },
+  "form": {
+    "title": "أرسل لنا رسالة",
+    "nameLabel": "الاسم الكامل *",
+    "namePlaceholder": "اسمك الكامل",
+    "emailLabel": "البريد الإلكتروني *",
+    "emailPlaceholder": "your.email@example.com",
+    "subjectLabel": "الموضوع *",
+    "subjectPlaceholder": "بماذا يتعلق الموضوع؟",
+    "messageLabel": "الرسالة *",
+    "messagePlaceholder": "أخبرنا عن مشروعك...",
+    "submit": "إرسال الرسالة",
+    "submitting": "جارٍ الإرسال..."
+  },
+  "sidebar": {
+    "contactInfoTitle": "معلومات الاتصال",
+    "contactInfo": [
+      {
+        "title": "العنوان",
+        "content": "حي ليفنت التجاري\nإسطنبول، تركيا 34330"
+      },
+      {
+        "title": "الهاتف",
+        "content": "+90 (212) 555-0123"
+      },
+      {
+        "title": "البريد الإلكتروني",
+        "content": "hello@innovationco.com"
+      }
+    ],
+    "officeHoursTitle": "ساعات العمل",
+    "timezone": "UTC+3 (توقيت إسطنبول)",
+    "officeHours": [
+      { "day": "الاثنين - الجمعة", "hours": "9:00 صباحًا - 6:00 مساءً" },
+      { "day": "السبت",             "hours": "10:00 صباحًا - 4:00 مساءً" },
+      { "day": "الأحد",            "hours": "مغلق" }
+    ],
+    "locationTitle": "موقعنا",
+    "locationDescription": "يقع في قلب منطقة الأعمال في إسطنبول، ويمكن الوصول إليه بسهولة بواسطة وسائل النقل العام.",
+    "viewOnMap": "عرض على خرائط جوجل"
+  }
+}

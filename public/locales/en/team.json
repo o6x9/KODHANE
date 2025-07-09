@@ -1,0 +1,41 @@
+{
+  "sectionHeader": {
+    "title": "Meet Our Team",
+    "subtitle": "A diverse group of passionate professionals dedicated to delivering exceptional results and driving innovation forward."
+  },
+  "teamMembers": [
+    {
+      "name": "Alex Johnson",
+      "role": "CEO & Founder",
+      "bio": "Visionary leader with 15+ years in tech innovation and business strategy."
+    },
+    {
+      "name": "Sarah Chen",
+      "role": "CTO",
+      "bio": "Technical architect specializing in scalable systems and emerging technologies."
+    },
+    {
+      "name": "Michael Rodriguez",
+      "role": "Lead Designer",
+      "bio": "Creative director focused on user-centered design and brand storytelling."
+    },
+    {
+      "name": "Emily Taylor",
+      "role": "Head of Development",
+      "bio": "Full-stack expert leading our development team with passion for clean code."
+    }
+  ],
+  "aria": {
+    "linkedin": "{{name}}'s LinkedIn",
+    "email": "Email {{name}}"
+  },
+  "stats": [
+    { "label": "Team Members" },
+    { "label": "Years Experience" },
+    { "label": "Support Available" }
+  ],
+  "quote": {
+    "text": "Together, we're not just building software – we're crafting digital experiences that transform businesses and inspire innovation across industries.",
+    "author": "— Innovation Co. Team"
+  }
+}

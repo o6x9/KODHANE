@@ -1,0 +1,37 @@
+{
+  "sectionHeader": {
+    "title": "Technologies & Clients",
+    "subtitle": "We work with cutting-edge technologies and are trusted by industry leaders worldwide."
+  },
+  "technologiesSectionTitle": "Technologies We Master",
+  "clientsSectionTitle": "Trusted by Industry Leaders",
+  "technologies": [
+    { "name": "React",       "category": "Frontend" },
+    { "name": "TypeScript",  "category": "Language" },
+    { "name": "Node.js",     "category": "Backend" },
+    { "name": "Python",      "category": "Language" },
+    { "name": "AWS",         "category": "Cloud" },
+    { "name": "Docker",      "category": "DevOps" },
+    { "name": "MongoDB",     "category": "Database" },
+    { "name": "GraphQL",     "category": "API" },
+    { "name": "Next.js",     "category": "Framework" },
+    { "name": "Kubernetes",  "category": "DevOps" },
+    { "name": "PostgreSQL",  "category": "Database" },
+    { "name": "Redis",       "category": "Cache" }
+  ],
+  "clients": [
+    "TechCorp",
+    "InnovateLab",
+    "DataFlow",
+    "CloudBase",
+    "StartupXYZ",
+    "Enterprise Solutions",
+    "Digital Dynamics",
+    "FutureSync"
+  ],
+  "stats": [
+    { "label": "Technologies Mastered" },
+    { "label": "Projects Delivered" },
+    { "label": "Client Retention" }
+  ]
+}

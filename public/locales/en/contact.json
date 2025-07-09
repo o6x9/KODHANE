@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to start your next project? Let's discuss how we can help bring your vision to life."
+  },
+  "form": {
+    "title": "Send us a Message",
+    "nameLabel": "Full Name *",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Email Address *",
+    "emailPlaceholder": "your.email@example.com",
+    "subjectLabel": "Subject *",
+    "subjectPlaceholder": "What's this about?",
+    "messageLabel": "Message *",
+    "messagePlaceholder": "Tell us about your project...",
+    "submit": "Send Message",
+    "submitting": "Sending..."
+  },
+  "sidebar": {
+    "contactInfoTitle": "Contact Information",
+    "contactInfo": [
+      {
+        "title": "Address",
+        "content": "Levent Business District\nIstanbul, Turkey 34330"
+      },
+      {
+        "title": "Phone",
+        "content": "+90 (212) 555-0123"
+      },
+      {
+        "title": "Email",
+        "content": "hello@innovationco.com"
+      }
+    ],
+    "officeHoursTitle": "Office Hours",
+    "timezone": "UTC+3 (Istanbul Time)",
+    "officeHours": [
+      { "day": "Monday - Friday", "hours": "9:00 AM - 6:00 PM" },
+      { "day": "Saturday",         "hours": "10:00 AM - 4:00 PM" },
+      { "day": "Sunday",           "hours": "Closed" }
+    ],
+    "locationTitle": "Our Location",
+    "locationDescription": "Located in the heart of Istanbul's business district, easily accessible by public transport.",
+    "viewOnMap": "View on Google Maps"
+  }
+}

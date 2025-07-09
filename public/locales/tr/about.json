@@ -1,0 +1,63 @@
+{
+  "aboutTitle": "Hikayemiz",
+  "aboutDescription": "Hayal gücü ile gerçeği buluşturarak anlamlı değişim yaratmanın gücüne inanan yenilikçi, tasarımcı ve geliştiricilerden oluşan tutkulu bir ekibiz. Yolculuğumuz, keskin dijital çözümler aracılığıyla hayal ile gerçeği birleştirme misyonuyla başladı.",
+  "missionTitle": "Misyonumuz",
+  "missionDescription": "İşletmeleri büyümeyi hızlandıran, kullanıcı deneyimlerini iyileştiren ve sürekli gelişen teknoloji ortamında kalıcı dijital dönüşüm sağlayan yenilikçi teknoloji çözümleriyle güçlendirmek.",
+  "stats": {
+    "projectsDelivered": "Tamamlanan Projeler",
+    "clientSatisfaction": "Müşteri Memnuniyeti",
+    "teamMembers": "Takım Üyeleri",
+    "yearsExperience": "Deneyim Yılı"
+  },
+  "valuesTitle": "Temel Değerlerimiz",
+  "values": [
+    {
+      "icon": "🚀",
+      "title": "Yenilik",
+      "description": "Teknolojik sınırları zorlamak"
+    },
+    {
+      "icon": "🎯",
+      "title": "Mükemmellik",
+      "description": "Her ayrıntıda kalite"
+    },
+    {
+      "icon": "🤝",
+      "title": "Ortaklık",
+      "description": "İşbirliğine dayalı başarı hikayeleri"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2020",
+      "title": "Kuruluş",
+      "description": "Dijital deneyimleri dönüştürme vizyonuyla başladı"
+    },
+    {
+      "year": "2021",
+      "title": "Büyüme",
+      "description": "Ekibimizi ve yeteneklerimizi birden çok alanda genişlettik"
+    },
+    {
+      "year": "2022",
+      "title": "Yenilik",
+      "description": "Kurumsal müşteriler için son teknoloji çözümler başlattık"
+    },
+    {
+      "year": "2023",
+      "title": "Mükemmellik",
+      "description": "Dijital dönüşümde sektör lideri olarak tanındık"
+    },
+    {
+      "year": "2024",
+      "title": "Genişleme",
+      "description": "5 ülkede ofislerle küresel erişim"
+    },
+    {
+      "year": "2025",
+      "title": "Gelecek",
+      "description": "AI destekli çözümler ve sürdürülebilir teknoloji öncülüğü"
+    }
+  ],
+  "timelineCurrent": "Mevcut"
+}

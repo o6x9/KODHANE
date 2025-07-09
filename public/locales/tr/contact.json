@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title": "Bizimle İletişime Geçin",
+    "subtitle": "Bir sonraki projenize başlamaya hazır mısınız? Vizyonunuzu hayata geçirmemize nasıl yardımcı olabileceğimizi tartışalım."
+  },
+  "form": {
+    "title": "Bize Mesaj Gönderin",
+    "nameLabel": "Adınız Soyadınız *",
+    "namePlaceholder": "Tam adınız",
+    "emailLabel": "E-posta Adresi *",
+    "emailPlaceholder": "emailiniz@ornek.com",
+    "subjectLabel": "Konu *",
+    "subjectPlaceholder": "Konuyla ilgili ne söylemek istersiniz?",
+    "messageLabel": "Mesaj *",
+    "messagePlaceholder": "Projeniz hakkında bize bilgi verin...",
+    "submit": "Mesaj Gönder",
+    "submitting": "Gönderiliyor..."
+  },
+  "sidebar": {
+    "contactInfoTitle": "İletişim Bilgileri",
+    "contactInfo": [
+      {
+        "title": "Adres",
+        "content": "Levent İş Bölgesi\nİstanbul, Türkiye 34330"
+      },
+      {
+        "title": "Telefon",
+        "content": "+90 (212) 555-0123"
+      },
+      {
+        "title": "E-posta",
+        "content": "hello@innovationco.com"
+      }
+    ],
+    "officeHoursTitle": "Çalışma Saatleri",
+    "timezone": "UTC+3 (İstanbul Saati)",
+    "officeHours": [
+      { "day": "Pazartesi - Cuma", "hours": "09:00 - 18:00" },
+      { "day": "Cumartesi",         "hours": "10:00 - 16:00" },
+      { "day": "Pazar",             "hours": "Kapalı" }
+    ],
+    "locationTitle": "Konumumuz",
+    "locationDescription": "İstanbul iş bölgesinin kalbinde konumlanmıştır, toplu taşıma ile kolayca ulaşılabilir.",
+    "viewOnMap": "Google Haritalarda Görüntüle"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "company": {
+    "logoAlt": "KODHANE Logosu",
+    "name": "KODHANE",
+    "description": "Fikirleri dijital gerçekliklere dönüştürüyoruz. İstanbul merkezli, gelişmiş web geliştirme, mobil uygulamalar ve yapay zeka çözümlerinde uzman bir teknoloji şirketiyiz.",
+    "address": "Levent İş Bölgesi, İstanbul, Türkiye",
+    "phone": "+90 (212) 555-0123",
+    "email": "hello@innovationco.com",
+    "createdBy": "Oluşturan aoa"
+  },
+  "sections": [
+    {
+      "title": "Şirket",
+      "links": [
+        "Hakkımızda",
+        "Ekibimiz",
+        "Kariyer",
+        "Basın"
+      ]
+    },
+    {
+      "title": "Hizmetler",
+      "links": [
+        "Web Geliştirme",
+        "Mobil Uygulamalar",
+        "UI/UX Tasarımı",
+        "Danışmanlık"
+      ]
+    },
+    {
+      "title": "Kaynaklar",
+      "links": [
+        "Blog",
+        "Vaka İncelemeleri",
+        "Dokümantasyon",
+        "Destek"
+      ]
+    },
+    {
+      "title": "Hukuki",
+      "links": [
+        "Gizlilik Politikası",
+        "Hizmet Şartları",
+        "Çerez Politikası",
+        "KVKK"
+      ]
+    }
+  ],
+  "socialLinks": [
+    "LinkedIn",
+    "Twitter",
+    "GitHub",
+    "Instagram"
+  ],
+  "bottom": {
+    "copyright": "© 2025 KODHANE Tüm hakları saklıdır.",
+    "builtWith": "React, TypeScript, Tailwind CSS ve Framer Motion ile oluşturuldu",
+    "timeLabel": "UTC:",
+    "systemStatus": "Tüm sistemler çalışıyor"
+  },
+  "backToTop": "Başa dön"
+}

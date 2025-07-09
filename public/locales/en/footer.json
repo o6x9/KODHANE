@@ -1,0 +1,62 @@
+{
+  "company": {
+    "logoAlt": "KODHANE Logo",
+    "name": "KODHANE",
+    "description": "Transforming ideas into digital realities. We're a Istanbul-based technology company specializing in cutting-edge web development, mobile applications, and AI solutions.",
+    "address": "Levent Business District, Istanbul, Turkey",
+    "phone": "+90 (212) 555-0123",
+    "email": "hello@innovationco.com",
+    "createdBy": "Created by aoa"
+  },
+  "sections": [
+    {
+      "title": "Company",
+      "links": [
+        "About Us",
+        "Our Team",
+        "Careers",
+        "Press"
+      ]
+    },
+    {
+      "title": "Services",
+      "links": [
+        "Web Development",
+        "Mobile Apps",
+        "UI/UX Design",
+        "Consulting"
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        "Blog",
+        "Case Studies",
+        "Documentation",
+        "Support"
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        "Privacy Policy",
+        "Terms of Service",
+        "Cookie Policy",
+        "GDPR"
+      ]
+    }
+  ],
+  "socialLinks": [
+    "LinkedIn",
+    "Twitter",
+    "GitHub",
+    "Instagram"
+  ],
+  "bottom": {
+    "copyright": "© 2025 KODHANE All rights reserved.",
+    "builtWith": "Built with React, TypeScript, Tailwind CSS & Framer Motion",
+    "timeLabel": "UTC:",
+    "systemStatus": "All systems operational"
+  },
+  "backToTop": "Back to top"
+}

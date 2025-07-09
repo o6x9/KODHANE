@@ -288,7 +288,7 @@ const Team: React.FC = () => {
         </div>
 
         {/* Team Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20">
+        <div className="text-center grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20">
           {stats.map((stat, index) => (
             <StatCard
               key={index}

@@ -1,0 +1,31 @@
+{
+  "servicesTitle": "Hizmetlerimiz",
+  "servicesIntro": "İşletmenizin ihtiyaçlarını karşılamak ve büyümeyi desteklemek için kapsamlı dijital çözümler sunuyoruz.",
+  "services": [
+    {
+      "icon": "💻",
+      "title": "Web Geliştirme",
+      "description": "En son teknolojiler ve en iyi uygulamalarla oluşturulmuş özel web uygulamaları."
+    },
+    {
+      "icon": "📱",
+      "title": "Mobil Uygulamalar",
+      "description": "iOS ve Android cihazlar için yerel ve çapraz platform mobil uygulamalar."
+    },
+    {
+      "icon": "🎨",
+      "title": "UI/UX Tasarımı",
+      "description": "Kullanıcı deneyimini ve etkileşimi artıran sezgisel ve güzel kullanıcı arayüzleri."
+    },
+    {
+      "icon": "☁️",
+      "title": "Bulut Çözümleri",
+      "description": "Modern uygulamalar için ölçeklenebilir bulut altyapısı ve dağıtım stratejileri."
+    },
+    {
+      "icon": "📊",
+      "title": "Danışmanlık",
+      "description": "İşletmelerin dijital dönüşümü kullanmalarına yardımcı olacak stratejik teknoloji danışmanlığı."
+    }
+  ]
+}

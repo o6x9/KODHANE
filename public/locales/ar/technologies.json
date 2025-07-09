@@ -1,0 +1,37 @@
+{
+  "sectionHeader": {
+    "title": "التقنيات والعملاء",
+    "subtitle": "نحن نعمل بأحدث التقنيات ويحظى بثقة رواد الصناعة في جميع أنحاء العالم."
+  },
+  "technologiesSectionTitle": "التقنيات التي نتقنها",
+  "clientsSectionTitle": "موثوق بها من قادة الصناعة",
+  "technologies": [
+    { "name": "React",       "category": "الواجهة الأمامية" },
+    { "name": "TypeScript",  "category": "لغة" },
+    { "name": "Node.js",     "category": "الخلفية" },
+    { "name": "Python",      "category": "لغة" },
+    { "name": "AWS",         "category": "السحابة" },
+    { "name": "Docker",      "category": "عمليات التطوير" },
+    { "name": "MongoDB",     "category": "قاعدة البيانات" },
+    { "name": "GraphQL",     "category": "واجهة برمجة التطبيقات" },
+    { "name": "Next.js",     "category": "إطار عمل" },
+    { "name": "Kubernetes",  "category": "عمليات التطوير" },
+    { "name": "PostgreSQL",  "category": "قاعدة البيانات" },
+    { "name": "Redis",       "category": "ذاكرة التخزين المؤقت" }
+  ],
+  "clients": [
+    "TechCorp",
+    "InnovateLab",
+    "DataFlow",
+    "CloudBase",
+    "StartupXYZ",
+    "Enterprise Solutions",
+    "Digital Dynamics",
+    "FutureSync"
+  ],
+  "stats": [
+    { "label": "التقنيات المتقنة" },
+    { "label": "المشاريع المنجزة" },
+    { "label": "احتفاظ العملاء" }
+  ]
+}

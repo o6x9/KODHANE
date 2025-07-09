@@ -1,0 +1,37 @@
+{
+  "sectionHeader": {
+    "title": "Teknolojiler ve Müşteriler",
+    "subtitle": "Keskin teknolojilerle çalışıyor ve dünya çapında sektör liderlerinin güvenini kazanıyoruz."
+  },
+  "technologiesSectionTitle": "Uzman Olduğumuz Teknolojiler",
+  "clientsSectionTitle": "Sektör Liderlerinin Güvendiği",
+  "technologies": [
+    { "name": "React",       "category": "Ön Uç" },
+    { "name": "TypeScript",  "category": "Dil" },
+    { "name": "Node.js",     "category": "Arka Uç" },
+    { "name": "Python",      "category": "Dil" },
+    { "name": "AWS",         "category": "Bulut" },
+    { "name": "Docker",      "category": "DevOps" },
+    { "name": "MongoDB",     "category": "Veritabanı" },
+    { "name": "GraphQL",     "category": "API" },
+    { "name": "Next.js",     "category": "Çerçeve" },
+    { "name": "Kubernetes",  "category": "DevOps" },
+    { "name": "PostgreSQL",  "category": "Veritabanı" },
+    { "name": "Redis",       "category": "Önbellek" }
+  ],
+  "clients": [
+    "TechCorp",
+    "InnovateLab",
+    "DataFlow",
+    "CloudBase",
+    "StartupXYZ",
+    "Enterprise Solutions",
+    "Digital Dynamics",
+    "FutureSync"
+  ],
+  "stats": [
+    { "label": "Ustanlaşılan Teknolojiler" },
+    { "label": "Teslim Edilen Projeler" },
+    { "label": "Müşteri Tutma" }
+  ]
+}
