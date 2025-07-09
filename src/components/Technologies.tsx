@@ -192,7 +192,7 @@ const Technologies: React.FC = () => {
           </div>
         </div>
         {/* Stats */}
-        <div ref={statsRef} className={`grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 transition-all duration-800 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div ref={statsRef} className={`text-center grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 transition-all duration-800 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {stats.map((s, idx) => <StatCard key={idx} {...s} index={idx} />)}
         </div>
       </div>
